@@ -22,21 +22,27 @@ public class MousePickup : MonoBehaviour
 			if(objectPickedUp.Place()){
 				isObjectPickedUp = false;
 			}
+			else{
+				objectPickedUp.PlaceAtPreviousLocation();
+				isObjectPickedUp = false;
+			}
 		}
     }	
 	
-	public static RaycastHit RaycastToMousePosition(float raycastLength){
+	public static RaycastHit RaycastToMousePosition(float raycastLength, string inputMask="Default"){
 		RaycastHit hit;
+
+		LayerMask mask = LayerMask.GetMask(inputMask);
 
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		Debug.DrawLine(ray.origin, ray.origin + ray.direction * 50);
-		Physics.Raycast(ray, out hit, raycastLength);
+		Physics.Raycast(ray, out hit, raycastLength, mask);
 		
 		return hit;
 	}
 
 	private void PickUpObject(){
-		RaycastHit hit = RaycastToMousePosition(50);
+		RaycastHit hit = RaycastToMousePosition(50, "Pickup Objects");
 		if(hit.collider != null){
 			PickupAbleObject pickedUpObject = hit.transform.gameObject.GetComponent<PickupAbleObject>();
 			if(pickedUpObject != null){

@@ -2694,9 +2694,10 @@ GameObject:
   - component: {fileID: 1761083858}
   - component: {fileID: 1761083857}
   - component: {fileID: 1761083856}
+  - component: {fileID: 1761083862}
   - component: {fileID: 1761083860}
   - component: {fileID: 1761083861}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Test Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2722,8 +2723,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.9784515, z: 1}
+  m_Center: {x: 0, y: -0.01077427, z: 0}
 --- !u!23 &1761083857
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2802,6 +2803,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedMaterial: {fileID: 2100000, guid: 600c2ea8dd409fc4bbe6c89c001ca829, type: 2}
+  cannotPlaceMaterial: {fileID: 2100000, guid: cee582d06af80f7479d6ca1267bfb7aa, type: 2}
+  objectCollider: {fileID: 1761083856}
+  triggerCollider: {fileID: 1761083862}
 --- !u!54 &1761083861
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2829,6 +2833,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &1761083862
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761083855}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.97164416, y: 0.9921675, z: 0.9189893}
+  m_Center: {x: 0.006965995, y: 0.0039162487, z: 0.0161677}
 --- !u!1 &1763458691
 GameObject:
   m_ObjectHideFlags: 0
