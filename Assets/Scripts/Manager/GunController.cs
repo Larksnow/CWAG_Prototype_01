@@ -15,7 +15,8 @@ public class GunController : MonoBehaviour
     public RectTransform crosshair;
     public GameObject gunModel;
     public float distance;
-    Vector3 rayDirection;
+    public Vector3 rayDirection;
+    public bool multimode = false;
     [SerializeField] private float force;
 
     public LayerMask layerMask;
@@ -78,7 +79,7 @@ public class GunController : MonoBehaviour
 
     void SelectTarget()
     {
-        if (holded != null) return;
+        if (holded != null || multimode) return;
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.transform.position, rayDirection, out hit, Mathf.Infinity, layerMask))
         {

@@ -22,13 +22,23 @@ public class MouseManager : MonoBehaviour
             Application.Quit();
         }
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && !GunController.main.multimode)
         {
             GunController.main.StartAbsorbObjectCoroutine();
         }
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !GunController.main.multimode)
         {
             GunController.main.ShootHoldedObj();
+        }
+
+        if(Input.GetMouseButton(1) && GunController.main.multimode)
+        {
+            GunController.main.gunModel.GetComponentInChildren<AbsorbRegion>().ApplySuctionForce();
+        }
+
+        if (Input.GetMouseButtonUp(1) && GunController.main.multimode)
+        {
+            GunController.main.gunModel.GetComponentInChildren<AbsorbRegion>().ApplyPushForce();
         }
     }
 

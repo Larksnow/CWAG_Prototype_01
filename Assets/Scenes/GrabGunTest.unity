@@ -169,6 +169,8 @@ MonoBehaviour:
   crosshair: {fileID: 927237530}
   gunModel: {fileID: 1252827163}
   distance: 20
+  rayDirection: {x: 0, y: 0, z: 0}
+  multimode: 1
   force: 400
   layerMask:
     serializedVersion: 2
@@ -259,8 +261,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 120100222}
-  - component: {fileID: 120100224}
   - component: {fileID: 120100223}
+  - component: {fileID: 120100224}
   m_Layer: 2
   m_Name: AbsorbRegion
   m_TagString: Untagged
@@ -277,7 +279,7 @@ Transform:
   m_GameObject: {fileID: 120100221}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.249}
+  m_LocalPosition: {x: 0, y: 0, z: 2.79}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -296,10 +298,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 952833d96c69f774c9b3a8cc67e36ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fixedPosition: {fileID: 1444631620}
-  absorbSpeed: 5
---- !u!135 &120100224
-SphereCollider:
+  absorbTarget: {fileID: 1444631620}
+  suchForce: 20
+  pushForce: 800
+  objectsInRegion: []
+--- !u!136 &120100224
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -315,10 +319,12 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.5
+  m_Height: 5
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: -4}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1349,6 +1355,7 @@ GameObject:
   - component: {fileID: 1252827167}
   - component: {fileID: 1252827166}
   - component: {fileID: 1252827165}
+  - component: {fileID: 1252827168}
   m_Layer: 0
   m_Name: SuckGun
   m_TagString: Untagged
@@ -1443,6 +1450,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1252827163}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1252827168
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252827163}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 20, y: 20, z: 0.02}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1273972186 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3623862486212968150, guid: 142e362385b405f4493501224456dccb,

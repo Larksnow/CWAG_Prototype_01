@@ -4,37 +4,55 @@ using UnityEngine;
 
 public class AbsorbRegion : MonoBehaviour
 {
-    public Transform fixedPosition; // Reference to the fixed position child
-    public float absorbSpeed = 5f; // Speed at which objects are sucked in
-
-    private void OnTriggerEnter(Collider other)
+    public Transform absorbTarget; // Position to which objects are sucked
+    public float suchForce = 10f; // Strength of the suction force
+    public float pushForce = 10f; 
+    [SerializeField] private List<Rigidbody> objectsInRegion = new List<Rigidbody>(); // Track objects with Rigidbody
+ 
+    void OnTriggerEnter(Collider other)
     {
         // Check if the object has a Rigidbody
-        Rigidbody rb = other.GetComponent<Rigidbody>();
-        if (rb != null)
+        Rigidbody rb = other.attachedRigidbody;
+        if (rb != null && !objectsInRegion.Contains(rb))
         {
-            // Start absorbing the object
-            StartCoroutine(AbsorbObject(rb));
+            objectsInRegion.Add(rb); // Add object to the list
         }
     }
-    
-    private IEnumerator AbsorbObject(Rigidbody obj)
+
+    void OnTriggerExit(Collider other)
     {
-        // Temporarily disable physics
-        obj.isKinematic = true;
-
-        // Gradually move the object toward the fixed position
-        while (Vector3.Distance(obj.transform.position, fixedPosition.position) > 0.1f)
+        // Remove the object when it exits the trigger
+        Rigidbody rb = other.attachedRigidbody;
+        if (rb != null && objectsInRegion.Contains(rb))
         {
-            obj.transform.position = Vector3.Lerp(obj.transform.position, fixedPosition.position, absorbSpeed * Time.deltaTime);
-            yield return null;
+            objectsInRegion.Remove(rb);
         }
-
-        // Snap to the fixed position
-        obj.transform.position = fixedPosition.position;
-
-        // Parent the object to the fixed position
-        obj.transform.SetParent(transform.parent, true);
-        GunController.main.holded = obj.gameObject;
     }
+
+    public void ApplySuctionForce()
+    {
+        foreach (Rigidbody rb in objectsInRegion)
+        {
+            if (rb != null) // Ensure the object still exists
+            {
+                // Calculate direction and apply force
+                Vector3 direction = (absorbTarget.position - rb.position).normalized;
+                rb.useGravity = false;
+                rb.AddForce(direction * suchForce, ForceMode.Acceleration);
+            }
+        }
+    }
+
+    public void ApplyPushForce()
+    {
+        foreach (Rigidbody rb in objectsInRegion)
+        {
+            if (rb != null) // Ensure the object still exists
+            {
+                rb.useGravity = true;
+                rb.AddForce(GunController.main.rayDirection * pushForce, ForceMode.Acceleration);
+            }
+        }
+    }
+
 }
