@@ -49,6 +49,13 @@ public class PickupAbleObject : MonoBehaviour
 				}
 				transform.position = hit.point + hit.normal * 0.6f;
 			}
+			else{
+				MeshRenderer[] meshRenderers = GetComponents<MeshRenderer>();
+				for(int i = 0; i < meshRenderers.Length; i++){
+					meshRenderers[i].materials = new Material[]{cannotPlaceMaterial};
+				}
+				canCurrentlyBePlaced = false;
+			}
 		}
     }
 
