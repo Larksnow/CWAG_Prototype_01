@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal.Internal;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
@@ -20,6 +21,11 @@ public class MouseManager : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKey(KeyCode.F4))
         {
             Application.Quit();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space ))
+        {
+            CameraManager.main.MoveCamera();
         }
 
     }
