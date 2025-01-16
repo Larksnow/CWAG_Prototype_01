@@ -22,6 +22,14 @@ public class MouseManager : MonoBehaviour
             Application.Quit();
         }
 
+        if (Input.GetMouseButtonDown(1))
+        {
+            GunController.main.StartAbsorbObjectCoroutine();
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            GunController.main.ShootHoldedObj();
+        }
     }
 
     public void UpdatePointerPosition()
@@ -34,7 +42,7 @@ public class MouseManager : MonoBehaviour
         canvasPosition.x = canvasPosition.x - (Screen.width / 2) * scaling;
         canvasPosition.y = canvasPosition.y - (Screen.height / 2) * scaling;
         
-        UpdateCrosshairPostiton(canvasPosition);
+        GunController.main.UpdateCrosshairPostiton(canvasPosition);
     }
 
     public void UpdateCrosshairPostiton(Vector2 screenPosition)
