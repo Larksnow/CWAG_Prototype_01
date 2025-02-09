@@ -278,6 +278,7 @@ MonoBehaviour:
   gunModelParentLeft: {fileID: 0}
   gunModelParentRight: {fileID: 0}
   gunModelParent: {fileID: 0}
+  grabHand: {fileID: 0}
   ammo: 0
   inCooldown: 0
   isReloading: 0
@@ -7106,25 +7107,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 348813549}
     m_Modifications:
-    - target: {fileID: 2038837773950401823, guid: d9d73082d49954c76801ef44145f7089,
-        type: 3}
-      propertyPath: height
-      value: 0.7
-      objectReference: {fileID: 0}
     - target: {fileID: 2807783574648251380, guid: d9d73082d49954c76801ef44145f7089,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.6442
+      value: 5.36
       objectReference: {fileID: 0}
     - target: {fileID: 2807783574648251380, guid: d9d73082d49954c76801ef44145f7089,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.66
+      value: 0.99
       objectReference: {fileID: 0}
     - target: {fileID: 2807783574648251380, guid: d9d73082d49954c76801ef44145f7089,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.39
       objectReference: {fileID: 0}
     - target: {fileID: 2807783574648251380, guid: d9d73082d49954c76801ef44145f7089,
         type: 3}
@@ -7168,8 +7164,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8988185564053029414, guid: d9d73082d49954c76801ef44145f7089,
         type: 3}
-      propertyPath: m_LocalScale.z
-      value: 55
+      propertyPath: m_LocalPosition.x
+      value: 1.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988185564053029414, guid: d9d73082d49954c76801ef44145f7089,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.61
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

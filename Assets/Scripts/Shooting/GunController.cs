@@ -83,7 +83,7 @@ public class GunController : MonoBehaviour
                 grabbable.OnRelease(hit.point);
 
             } else {
-                IGrabbable grabbable = hit.collider.GetComponent<IGrabbable>();
+                IGrabbable grabbable = hit.collider.attachedRigidbody.GetComponent<IGrabbable>();
                 if (grabbable != null)
                 {
                     grabbable.OnGrab(grabHand);

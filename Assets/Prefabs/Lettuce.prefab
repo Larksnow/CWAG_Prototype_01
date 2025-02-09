@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4295372592807050477}
   - component: {fileID: 8973769711855526952}
   - component: {fileID: 6475188966843392204}
+  - component: {fileID: 4378511385591593152}
   m_Layer: 6
   m_Name: Lettuce
   m_TagString: Ingredient
@@ -77,6 +78,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4378511385591593152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4321318187003207492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75847cc25af794beea81fb270e6a45da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushForce: 10
 --- !u!1 &6622253140697495765
 GameObject:
   m_ObjectHideFlags: 0

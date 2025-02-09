@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.30961695, y: 0.635718, z: 0.6357179, w: 0.30961698}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 99.999985, z: 37.899998}
+  m_LocalScale: {x: 100, y: 99.999985, z: 55}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2807783574648251380}
@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 2807783574648251380}
   - component: {fileID: 2038837773950401823}
   - component: {fileID: 3071400562602250861}
+  - component: {fileID: 6222987670289707947}
   m_Layer: 6
   m_Name: Top Bun
   m_TagString: Ingredient
@@ -154,7 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Top Bun
   active: 1
-  height: 0.5
+  height: 0.7
   collider: {fileID: 6398628915213031170}
 --- !u!54 &3071400562602250861
 Rigidbody:
@@ -183,3 +184,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6222987670289707947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6513745789571580272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75847cc25af794beea81fb270e6a45da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushForce: 10
