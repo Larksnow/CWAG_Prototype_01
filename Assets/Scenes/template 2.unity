@@ -274,11 +274,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crosshair: {fileID: 927237530}
   gunModel: {fileID: 288018224}
-  grabHand: {fileID: 660436330}
   distance: 100
   gunModelParentLeft: {fileID: 0}
   gunModelParentRight: {fileID: 0}
   gunModelParent: {fileID: 0}
+  grabHand: {fileID: 660436330}
   ammo: 0
   inCooldown: 0
   isReloading: 0
@@ -4723,6 +4723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75847cc25af794beea81fb270e6a45da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pushForce: 20
 --- !u!135 &1698480856
 SphereCollider:
   m_ObjectHideFlags: 0
