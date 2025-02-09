@@ -44,10 +44,15 @@ public class Burger : MonoBehaviour, IHitboxOwner
         ingredients.Add(ingredient);
         ingredient.active = false;
         ingredient.GetComponent<Rigidbody>().isKinematic = true;
+        
+        ingredient.DisableCollider();
 
         ingredient.transform.parent = transform;
         ingredient.transform.localRotation = Quaternion.identity;
         ingredient.transform.localPosition = new Vector3(0, totalHeight, 0);
+
+        if (ingredient.name == "Top Bun")
+            hitbox.gameObject.SetActive(false);
 
         RecalculateHitboxHeight();
     }

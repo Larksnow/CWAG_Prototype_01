@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6266372211094584132}
   - component: {fileID: 1184063819863680091}
   - component: {fileID: 7996802888326631277}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Patty
   m_TagString: Ingredient
   m_Icon: {fileID: 0}
@@ -48,7 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Patty
   active: 1
-  height: 0.4
+  height: 0.5
+  collider: {fileID: 5481761540917783542}
 --- !u!54 &7996802888326631277
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -88,7 +89,7 @@ GameObject:
   - component: {fileID: 1233245079293987886}
   - component: {fileID: 5521495021250346991}
   - component: {fileID: 5481761540917783542}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Burgir
   m_TagString: Untagged
   m_Icon: {fileID: 0}

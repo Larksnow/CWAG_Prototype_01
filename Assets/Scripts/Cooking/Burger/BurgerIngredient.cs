@@ -8,4 +8,16 @@ public class BurgerIngredient : MonoBehaviour
     public bool active = true;
 
     public float height;
+
+    [SerializeField] new MeshCollider collider;
+
+    public void DisableCollider()
+    {
+        collider.gameObject.layer = 7;
+    }
+
+    public void EnableColldier()
+    {
+        collider.gameObject.layer = 6;
+    }
 }
