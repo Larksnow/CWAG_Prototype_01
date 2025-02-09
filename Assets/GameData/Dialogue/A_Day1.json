@@ -1,0 +1,40 @@
+{
+  "npcID": "A",
+  "dayID": "Day1",
+  "dialogue": [
+    {
+      "id": "node1",
+      "text": "Hello!",
+      "branches": [
+        {
+          "condition": "isOption1",
+          "nextNodeID": "node2"
+        },
+        {
+          "condition": "isOption2",
+          "nextNodeID": "node3"
+        }
+      ]
+    },
+    {
+      "id": "node2",
+      "text": "What a hambuger!",
+      "nextNodeID": "node4"
+    },
+    {
+      "id": "node3",
+      "text": "What a huge hambuger!",
+      "nextNodeID": "node4"
+    },
+    {
+      "id": "node4",
+      "text": "Shut up and take my money!",
+      "nextNodeID": "node5"
+    },
+    {
+      "id": "node5",
+      "text": "Bye! I will come back tomorrow!",
+      "nextNodeID": ""
+    }
+  ]
+}
