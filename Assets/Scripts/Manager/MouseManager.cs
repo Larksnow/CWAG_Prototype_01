@@ -21,6 +21,11 @@ public class MouseManager : MonoBehaviour
         {
             Application.Quit();
         }
+        if (Input.GetMouseButtonDown(0))
+        {
+            GunController.main.OnShootDown();
+            Debug.Log("Mouse Down");
+        }
 
     }
 
