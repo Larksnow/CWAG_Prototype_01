@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 6942883496334909014}
   - component: {fileID: 7878398653069699130}
   - component: {fileID: 7734506316947196886}
+  - component: {fileID: 7815821199153414853}
   m_Layer: 0
   m_Name: Burgir (1)
   m_TagString: Untagged
@@ -59,7 +60,7 @@ Transform:
   m_GameObject: {fileID: 6960826248699168128}
   serializedVersion: 2
   m_LocalRotation: {x: -0.30961695, y: 0.635718, z: 0.6357179, w: 0.30961698}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.01, y: 0.95, z: 0.2}
   m_LocalScale: {x: 100, y: 99.999985, z: 37.899998}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -115,3 +116,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7815821199153414853
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6960826248699168128}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6364822073773630413, guid: a9e0e02ee12bf4ccd955e2151b98864b, type: 3}
